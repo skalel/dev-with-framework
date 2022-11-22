@@ -27,7 +27,7 @@ class StoreParticipanteRequest extends FormRequest
             'nome' => 'required|min:3',
             'sobrenome' => 'required|min:3',
             'email' => 'required|unique:participantes|email',
-            'data_nascimento' => 'required',
+            'data_nascimento' => 'required|date',
         ];
     }
     public function messages()
@@ -41,6 +41,7 @@ class StoreParticipanteRequest extends FormRequest
         'email.unique'=>'Esse email já está sendo utilizado.',
         'email.email'=>'Insira um email valido',
         'data_nascimento.required'=>'Data de nascimento é obrigatória',
+        'data_nascimento.date'=>'Insira uma data válida.'
       ];
     }
 }
